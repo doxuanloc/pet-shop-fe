@@ -18,7 +18,7 @@ function News() {
 
     useEffect(()=>{
         window.scrollTo(0,0)
-        Axios.get(`http://localhost:4000/news`)
+        Axios.get(`https://petshopbtec.herokuapp.com/news`)
             .then(res => {  
                 const arr = [...res.data]
                 setConstNews(arr)

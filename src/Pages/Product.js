@@ -18,7 +18,7 @@ function ProductForDog(props) {
     const [news, setNews] = useState([])
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/products`)
+        axios.get(`https://petshopbtec.herokuapp.com/products`)
             .then(res => {
                 for(let i in res.data) { 
                     if (res.data[i].productCate === props.location.pathname.substr(1)) {
@@ -26,7 +26,7 @@ function ProductForDog(props) {
                     }
                 }
             })
-        axios.get(`http://localhost:4000/news`)
+        axios.get(`https://petshopbtec.herokuapp.com/news`)
             .then(res => { 
                 setNews(res.data) 
             })

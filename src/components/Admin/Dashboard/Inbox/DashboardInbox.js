@@ -7,7 +7,7 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = "https://petshopbtec.herokuapp.com";
 
 export default function DashboardInbox(props) {
     
@@ -63,7 +63,7 @@ export default function DashboardInbox(props) {
         }
         socket.emit('messageSend-admin', data)
 
-        axios.get(`http://localhost:4000/chat`)
+        axios.get(`https://petshopbtec.herokuapp.com/chat`)
             .then(res => {
                 setAllChatData(res.data)
                 setConstAllChatData(res.data)

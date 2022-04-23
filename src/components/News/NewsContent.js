@@ -11,7 +11,7 @@ export default function NewsContent(props) {
 
     useEffect(()=>{ 
         if (news) {
-            Axios.get(`http://localhost:4000/news`)
+            Axios.get(`https://petshopbtec.herokuapp.com/news`)
             .then(res => { 
                 const arr = []
                 for (let i in res.data) { 

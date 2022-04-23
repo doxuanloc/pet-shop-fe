@@ -17,7 +17,7 @@ export default function DashboardProductTable(props) {
     const [isSortBySold, setIsSortBySold] = useState(false)
     
     useEffect(()=>{
-        axios.get(`http://localhost:4000/products`)
+        axios.get(`https://petshopbtec.herokuapp.com/products`)
             .then(res => {
                 setProducts(res.data)
                 setConstProducts(res.data)
@@ -103,7 +103,7 @@ export default function DashboardProductTable(props) {
     }
 
     const deleteOnClick = (event) => {
-        axios.post(`http://localhost:4000/products/delete/:${event.target.id}`, {
+        axios.post(`https://petshopbtec.herokuapp.com/products/delete/:${event.target.id}`, {
             productId: event.target.id
         })
         setProducts(products.filter((item)=>{

@@ -12,7 +12,7 @@ import { APIs } from '../components/common';
 import $ from 'jquery';  
 import socketIOClient from "socket.io-client"
 
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = "https://petshopbtec.herokuapp.com";
  
 function Checkout(props) {
 
@@ -48,7 +48,7 @@ function Checkout(props) {
 
     useEffect(()=>{
         window.scrollTo(0,0)  
-        Axios.get(`http://localhost:4000/users/${localStorage.getItem('user-id')}`, { 
+        Axios.get(`https://petshopbtec.herokuapp.com/users/${localStorage.getItem('user-id')}`, { 
             headers: {"authorization" : `Bearer ${localStorage.getItem('token')}`}
         })
         .then(res => {  
@@ -62,7 +62,7 @@ function Checkout(props) {
             setUserProvince(userInfo.userTinh) 
             setUserAddress(userInfo.userAddress) 
             if (userInfo.userDistrict !== "") {
-                Axios.get(`http://localhost:4000/vietnam`)
+                Axios.get(`https://petshopbtec.herokuapp.com/vietnam`)
                     .then(res => {
                         setTinh(res.data[0].tinh)
                         setHuyen(res.data[0].huyen)
@@ -139,7 +139,7 @@ function Checkout(props) {
                 alert("Bạn chưa hoàn tất thanh toán!")
                 return
             } else {
-                Axios.post('http://localhost:4000/order', data)
+                Axios.post('https://petshopbtec.herokuapp.com/order', data)
                 setTimeout(()=>{ 
                     alert("Đặt hàng thành công!")
                     localStorage.removeItem('total')
@@ -150,7 +150,7 @@ function Checkout(props) {
                 }, 1000)
             }
         } else {
-            Axios.post('http://localhost:4000/order', data)
+            Axios.post('https://petshopbtec.herokuapp.com/order', data)
             setTimeout(()=>{ 
                 alert("Đặt hàng thành công!")
                 localStorage.removeItem('total')

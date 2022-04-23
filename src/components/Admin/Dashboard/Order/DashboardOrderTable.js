@@ -14,7 +14,7 @@ export default function DashboardUserTable(props) {
     const [constOrder, setConstOrder] = useState([])
     
     useEffect(()=>{
-        axios.get(`http://localhost:4000/order`)
+        axios.get(`https://petshopbtec.herokuapp.com/order`)
             .then(res => {
                 setOrder(res.data)
                 setConstOrder(res.data)
@@ -101,7 +101,7 @@ export default function DashboardUserTable(props) {
 
     const deleteOnClick = (event) => {
         const id = event.target.id
-        axios.post(`http://localhost:4000/order/delete/:${id}`, {
+        axios.post(`https://petshopbtec.herokuapp.com/order/delete/:${id}`, {
             id: id
         }).then(()=>{ 
             setOrder(order.filter((item)=>{

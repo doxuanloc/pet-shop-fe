@@ -9,7 +9,7 @@ export default function NewsBanner(props) {
     const [date, setDate] = useState("")
     
     useEffect(()=>{
-        Axios.post(`http://localhost:4000/news/update/${news._id}`, {
+        Axios.post(`https://petshopbtec.herokuapp.com/news/update/${news._id}`, {
             countId: news._id
         }) 
         const monthNames = [

@@ -27,7 +27,7 @@ export default function DashboardMain() {
     const [incomeMonthPercent, setIncomeMonthPercent] = useState({}) 
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/products`)
+        axios.get(`https://petshopbtec.herokuapp.com/products`)
             .then(res => {
                 setProducts(res.data)
                 let virtualProducts = [...res.data]
@@ -43,7 +43,7 @@ export default function DashboardMain() {
                 setTopProductSales(virtualProducts2)
             }
         )
-        axios.get(`http://localhost:4000/users/list`)
+        axios.get(`https://petshopbtec.herokuapp.com/users/list`)
             .then(res => {
                 setUser(res.data)
             }
@@ -53,7 +53,7 @@ export default function DashboardMain() {
                 setEmail(res.data)
             }
         ) 
-        axios.get(`http://localhost:4000/order`)
+        axios.get(`https://petshopbtec.herokuapp.com/order`)
             .then(res => {
                 setOrder(res.data)
                 const topCustomer2 = Object.values(res.data.reduce((a, {orderEmail, orderName, orderTotal, orderAvatar}) => {

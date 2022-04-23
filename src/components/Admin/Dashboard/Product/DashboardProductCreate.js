@@ -23,7 +23,7 @@ export default function DashboardProductCreate(props) {
     }
     
     useEffect(()=> {
-        axios.get(`http://localhost:4000/products`)
+        axios.get(`https://petshopbtec.herokuapp.com/products`)
             .then(res => {
                 const test = Object.values(res.data.reduce((a, {productCate}) => {
                     a[productCate] = a[productCate] || {productCate};
@@ -55,13 +55,13 @@ export default function DashboardProductCreate(props) {
         formData.append("productCate", cateValue);  
         formData.append("productDes", inputValue.des); 
         formData.append("productDate", new Date());
-        axios.post('http://localhost:4000/products', formData, config)
+        axios.post('https://petshopbtec.herokuapp.com/products', formData, config)
         props.setCloseCreateFunc(false);
         props.setToastFunc(true);
     }
 
     const addNewCate = () => {
-        axios.post('http://localhost:4000/category', {
+        axios.post('https://petshopbtec.herokuapp.com/category', {
             cateName: inputValue.cate
         })
         setCate(cate=>[...cate, {cateName: inputValue.cate}])

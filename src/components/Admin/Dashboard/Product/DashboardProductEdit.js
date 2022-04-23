@@ -82,12 +82,12 @@ export default function DashboardProductEdit(props) {
             setProductSex(product.productSex)
             setProductSize(product.productSize)
             setProductGroupCate(product.productGroupCate)
-            axios.get(`http://localhost:4000/category`)
+            axios.get(`https://petshopbtec.herokuapp.com/category`)
                 .then(res => {
                     setCate(res.data)
                 }
             )
-            axios.get(`http://localhost:4000/products`)
+            axios.get(`https://petshopbtec.herokuapp.com/products`)
                 .then(res => {
                     const test = Object.values(res.data.reduce((a, {productGroupCate}) => {
                         a[productGroupCate] = a[productGroupCate] || {productGroupCate};
@@ -130,13 +130,13 @@ export default function DashboardProductEdit(props) {
         formData.append("productDes", productDes);
         formData.append("productSex", productSex);
         formData.append("productDate", new Date());
-        axios.post(`http://localhost:4000/products/update/${product._id}`, formData, config)
+        axios.post(`https://petshopbtec.herokuapp.com/products/update/${product._id}`, formData, config)
         props.setCloseEditFunc(false);
         props.setToastFunc(true);
     }
 
     const addNewCate = () => {
-        axios.post('http://localhost:4000/category', {
+        axios.post('https://petshopbtec.herokuapp.com/category', {
             cateName: inputValue.cate
         })
         setCate(cate=>[...cate, {cateName: inputValue.cate}])
@@ -159,7 +159,7 @@ export default function DashboardProductEdit(props) {
         const items = [...productImg]
         items.splice(id, 1)
         setProductImg(items)
-        axios.post(`http://localhost:4000/products/update/${product._id}`, {
+        axios.post(`https://petshopbtec.herokuapp.com/products/update/${product._id}`, {
             deleteImgId: id
         })
     }

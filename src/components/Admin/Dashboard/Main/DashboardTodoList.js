@@ -13,7 +13,7 @@ export default function DashboardTodoList(props) {
     const [editTodoText, setEditTodoText] = useState("")
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/todos`)
+        axios.get(`https://petshopbtec.herokuapp.com/todos`)
             .then(res => {
                 setTodoList(res.data)
             }
@@ -36,7 +36,7 @@ export default function DashboardTodoList(props) {
             }
         }
         setTodoList(virtualTodo)
-        axios.post('http://localhost:4000/todos/update', {
+        axios.post('https://petshopbtec.herokuapp.com/todos/update', {
             id: id,
             isDone: isDone
         }) 
@@ -51,9 +51,9 @@ export default function DashboardTodoList(props) {
             todoDate: new Date()
         }
         virtualTodo.push(data)
-        axios.post('http://localhost:4000/todos', data)
+        axios.post('https://petshopbtec.herokuapp.com/todos', data)
             .then(function (res) { 
-                axios.get(`http://localhost:4000/todos`)
+                axios.get(`https://petshopbtec.herokuapp.com/todos`)
                     .then(res2 => {
                         setTodoList(res2.data)
                     }
@@ -67,7 +67,7 @@ export default function DashboardTodoList(props) {
 
     const deleteTodo = (event) => { 
         const id = event.target.id
-        axios.post('http://localhost:4000/todos', {
+        axios.post('https://petshopbtec.herokuapp.com/todos', {
             delete: true,
             id: id
         })
@@ -91,7 +91,7 @@ export default function DashboardTodoList(props) {
             }
         }
         setTodoList(virtualTodo)
-        axios.post('http://localhost:4000/todos/update', {
+        axios.post('https://petshopbtec.herokuapp.com/todos/update', {
             edit: true,
             id: id,
             todoContent: editTodoText

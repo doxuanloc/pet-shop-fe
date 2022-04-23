@@ -34,7 +34,7 @@ function Login(props) {
     const sendAccount = (event) => {
         event.preventDefault()
         if (tab === 0) {
-            Axios.post('http://localhost:4000/users/login', {
+            Axios.post('https://petshopbtec.herokuapp.com/users/login', {
                 loginEmail: email,
                 loginPassword: password
             }) 
@@ -53,7 +53,7 @@ function Login(props) {
                 setArrErr(err.response.data);
             })
         } else {
-            Axios.post('http://localhost:4000/users/register', {
+            Axios.post('https://petshopbtec.herokuapp.com/users/register', {
                 userName: name,
                 userEmail: email,
                 userPassword: password,

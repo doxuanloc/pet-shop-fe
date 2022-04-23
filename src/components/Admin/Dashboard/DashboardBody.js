@@ -45,22 +45,22 @@ export default function DashboardBody(props) {
     }
 
     useEffect(()=> {
-        Axios.get(`http://localhost:4000/products/${props.productId}`)
+        Axios.get(`https://petshopbtec.herokuapp.com/products/${props.productId}`)
             .then(res => {
                 setProduct(res.data)
             } 
         )
-        Axios.get(`http://localhost:4000/news/${props.productId}`)
+        Axios.get(`https://petshopbtec.herokuapp.com/news/${props.productId}`)
             .then(res => {
                 setNews(res.data)
             } 
         )
-        Axios.get(`http://localhost:4000/users/list/${props.productId}`)
+        Axios.get(`https://petshopbtec.herokuapp.com/users/list/${props.productId}`)
             .then(res => {
                 setUser(res.data)
             } 
         )
-        Axios.get(`http://localhost:4000/order/${props.productId}`)
+        Axios.get(`https://petshopbtec.herokuapp.com/order/${props.productId}`)
             .then(res => {
                 setOrder(res.data)
             } 
