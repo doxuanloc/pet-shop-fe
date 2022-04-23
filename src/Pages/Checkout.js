@@ -80,7 +80,7 @@ function Checkout(props) {
                 setUserDistrict(userInfo.userHuyen)
             } 
         })
-        Axios.get('https://petshopbtec.herokuapp.com')
+        Axios.get('https://petshopbtec.herokuapp.com/vietnam')
         .then(res => {
             setTinh(res.data[0].tinh)
             setHuyen(res.data[0].huyen)
