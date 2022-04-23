@@ -48,7 +48,7 @@ export default function DashboardMain() {
                 setUser(res.data)
             }
         ) 
-        axios.get(`http://pe.heromc.net:4000/email`)
+        axios.get(`https://petshopbtec.herokuapp.com/email`)
             .then(res => {
                 setEmail(res.data)
             }

@@ -19,7 +19,7 @@ function Login(props) {
     const [arrErr, setArrErr] = useState() 
 
     useEffect(()=> {
-        Axios.get(`http://pe.heromc.net:4000/users/${localStorage.getItem('user-id')}`, { 
+        Axios.get(`https://petshopbtec.herokuapp.com/users/${localStorage.getItem('user-id')}`, { 
             headers: {"authorization" : `Bearer ${localStorage.getItem('token')}`}
         })
         .then(res => { 

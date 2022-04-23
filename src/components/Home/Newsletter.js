@@ -9,7 +9,7 @@ export default function Newsletter(props) {
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://pe.heromc.net:4000/email', {
+        axios.post('https://petshopbtec.herokuapp.com/email', {
             subscriber: emailInput
         }) 
         .then(res => {
