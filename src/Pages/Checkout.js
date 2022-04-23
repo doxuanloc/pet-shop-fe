@@ -2,7 +2,7 @@ import '../App.css';
 import '../Styles/Checkout.css'
 import { useContext, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { UserContext } from '../contexts/User';
 import Axios from 'axios';
 import { CartContext } from '../contexts/Cart';
